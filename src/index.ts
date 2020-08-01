@@ -19,13 +19,13 @@ const parseVideo = async (videoId: string): Promise<unknown> => {
     return {
         title: info.videoDetails.title,
         length: Number(info.videoDetails.lengthSeconds),
-        thumbnail: info.videoDetails.thumbnail.thumbnails.pop().url,
-        stream: format.url
+        thumbnailUrl: info.videoDetails.thumbnail.thumbnails.pop().url,
+        streamUrl: format.url
     }
 }
 
 const cachedParseVideo = mem(parseVideo, {
-    maxAge: 10800   // 3 hours
+    maxAge: 10_800   // 3 hours
 })
 
 app.use('/', (req, res) => res.send('🎥 YT Extractor'))

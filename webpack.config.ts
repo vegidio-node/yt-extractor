@@ -1,5 +1,5 @@
-import * as path from 'path'
-import * as webpack from 'webpack'
+import * as path from 'path';
+import * as webpack from 'webpack';
 
 const config: webpack.Configuration = {
     target: 'node',
@@ -8,16 +8,14 @@ const config: webpack.Configuration = {
     output: {
         path: path.resolve(__dirname, 'build'),
         libraryTarget: 'umd',
-        filename: './app.bundle.js'
+        filename: './app.bundle.js',
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
     },
     module: {
-        rules: [
-            { test: /\.ts$/, loader: 'ts-loader' }
-        ]
-    }
-}
+        rules: [{ test: /\.ts$/, loader: 'ts-loader' }],
+    },
+};
 
-export default config
+export default config;

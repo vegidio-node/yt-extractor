@@ -1,6 +1,5 @@
-describe('Placeholder test', () =>
-{
+describe('Placeholder test', () => {
     test('Foo', () => {
-        expect(1).toBe(1)
-    })
-})
+        expect(1).toBe(1);
+    });
+});

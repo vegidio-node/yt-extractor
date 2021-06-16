@@ -17,7 +17,7 @@ const parseVideo = async (videoId: string): Promise<unknown> => {
     const format = ytdl.chooseFormat(info.formats, { quality: 'highest' });
 
     return {
-        format.url,
+        streamUrl:format.url,
     };
 };
 

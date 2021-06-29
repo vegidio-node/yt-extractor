@@ -15,12 +15,9 @@ app.get('/video/:videoId', async (req, res) => {
 const parseVideo = async (videoId: string): Promise<unknown> => {
     const info = await ytdl.getInfo(`https://www.youtube.com/watch?v=${videoId}`);
     const format = ytdl.chooseFormat(info.formats, { quality: 'highest' });
-
+    console.log(format.url);
     return {
-        title: info.videoDetails.title,
-        length: Number(info.videoDetails.lengthSeconds),
-        thumbnailUrl: info.videoDetails.thumbnail.thumbnails.pop().url,
-        streamUrl: format.url,
+        streamUrl:format.url,
     };
 };
 
